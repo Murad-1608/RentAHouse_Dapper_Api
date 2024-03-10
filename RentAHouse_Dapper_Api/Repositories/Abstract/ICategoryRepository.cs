@@ -5,7 +5,8 @@ namespace RentAHouse_Dapper_Api.Repositories.Abstract
     public interface ICategoryRepository
     {
         Task<List<ResultCategoryDTO>> GetAllAsync();
-        Task CreateCategory(CreateCategoryDTO categoryDTO);
-       
+        Task Create(CreateCategoryDTO categoryDTO);
+        Task Delete(int id);
+        Task Update(UpdateCategoryDTO updateCategoryDTO);
     }
 }

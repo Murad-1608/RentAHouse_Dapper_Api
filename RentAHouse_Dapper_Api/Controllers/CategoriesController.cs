@@ -24,9 +24,25 @@ namespace RentAHouse_Dapper_Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCategory(CreateCategoryDTO createCategoryDTO)
+        public async Task<IActionResult> Create(CreateCategoryDTO createCategoryDTO)
         {
-            await categoryRepository.CreateCategory(createCategoryDTO);
+            await categoryRepository.Create(createCategoryDTO);
+
+            return Ok(new { StatusCode = 200 });
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await categoryRepository.Delete(id);
+
+            return Ok(new { StatusCode = 200 });
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update(UpdateCategoryDTO updateCategoryDTO)
+        {
+            await categoryRepository.Update(updateCategoryDTO);
 
             return Ok(new { StatusCode = 200 });
         }
