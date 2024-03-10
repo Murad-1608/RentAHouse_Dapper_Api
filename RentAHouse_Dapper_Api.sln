@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentAHouse_Dapper_Api", "RentAHouse_Dapper_Api\RentAHouse_Dapper_Api.csproj", "{2D259F22-A076-4CBC-AEE6-6C379E10404D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentAHouse_Dapper_UI", "RentAHouse_Dapper_UI\RentAHouse_Dapper_UI.csproj", "{95E6CE1F-C742-486D-A901-F8C3064A9A3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D259F22-A076-4CBC-AEE6-6C379E10404D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D259F22-A076-4CBC-AEE6-6C379E10404D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D259F22-A076-4CBC-AEE6-6C379E10404D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D259F22-A076-4CBC-AEE6-6C379E10404D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95E6CE1F-C742-486D-A901-F8C3064A9A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E6CE1F-C742-486D-A901-F8C3064A9A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E6CE1F-C742-486D-A901-F8C3064A9A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E6CE1F-C742-486D-A901-F8C3064A9A3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F44971CD-130F-4656-A421-8F6425E731D3}
+	EndGlobalSection
+EndGlobal
