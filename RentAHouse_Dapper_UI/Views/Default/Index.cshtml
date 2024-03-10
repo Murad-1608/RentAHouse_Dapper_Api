@@ -4,5 +4,21 @@
     Layout = "~/Views/Shared/_DefaultLayout.cshtml";
 }
 
-<h1>Index</h1>
+@await Component.InvokeAsync("DefaultFeatureComponent");
+
+@await Component.InvokeAsync("DefaultHomePageProductList");
+
+@await Component.InvokeAsync("DefaultWhoWeAreComponent");
+
+@await Component.InvokeAsync("DefaultServicesComponent");
+
+@await Component.InvokeAsync("DefaultExplorerCitiesComponent");
+
+@await Component.InvokeAsync("DefaultOurClientsComponent");
+
+@await Component.InvokeAsync("DefaultSubFeatureComponent");
+
+@await Component.InvokeAsync("DefaultDiscountOfDayComponent");
+
+@await Component.InvokeAsync("DefaultBrandsComponent");
 

@@ -7,6 +7,7 @@ namespace RentAHouse_Dapper_UI.Controllers
         public IActionResult Index()
         {
             return View();
+            
         }
     }
 }
