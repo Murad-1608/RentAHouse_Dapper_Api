@@ -1,16 +1,14 @@
 ﻿using RentAHouse_Dapper_Api.DTOs.CategoryDTOs;
 using RentAHouse_Dapper_Api.Models.DapperContext;
-using RentAHouse_Dapper_Api.Repositories.Abstract;
 using Dapper;
+using RentAHouse_Dapper_Api.DataAccess.Abstract;
 
-namespace RentAHouse_Dapper_Api.Repositories.Concrete.MsSql
+namespace RentAHouse_Dapper_Api.DataAccess.Concrete.MsSql
 {
-    public class CategoryRepository : ICategoryRepository
+    public sealed class CategoryRepository : BaseRepository, ICategoryRepository
     {
-        private readonly Context context;
-        public CategoryRepository(Context context)
+        public CategoryRepository(Context context) : base(context)
         {
-            this.context = context;
         }
 
         public async Task Create(CreateCategoryDTO categoryDTO)
@@ -45,6 +43,19 @@ namespace RentAHouse_Dapper_Api.Repositories.Concrete.MsSql
             {
                 var values = await connection.QueryAsync<ResultCategoryDTO>(query);
                 return values.ToList();
+            }
+        }
+
+        public async Task<ResultCategoryDTO> GetById(int id)
+        {
+            string query = "select *from Categories where id=@id";
+            var parameters = new DynamicParameters();
+            parameters.Add("@id", id);
+            using (var connection = context.CreateConnection())
+            {
+                var result = await connection.QueryFirstOrDefaultAsync<ResultCategoryDTO>(query, parameters);
+
+                return result!;
             }
         }
 

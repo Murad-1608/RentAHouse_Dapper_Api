@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RentAHouse_Dapper_Api.DataAccess.Abstract;
 using RentAHouse_Dapper_Api.DTOs.CategoryDTOs;
-using RentAHouse_Dapper_Api.Repositories.Abstract;
 
 namespace RentAHouse_Dapper_Api.Controllers
 {
@@ -45,6 +45,16 @@ namespace RentAHouse_Dapper_Api.Controllers
             await categoryRepository.Update(updateCategoryDTO);
 
             return Ok(new { StatusCode = 200 });
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var value = await categoryRepository.GetById(id);
+            if (value == null)
+                return BadRequest(new { StatusCode = 400 });
+            else
+                return Ok(value);
         }
     }
 }
