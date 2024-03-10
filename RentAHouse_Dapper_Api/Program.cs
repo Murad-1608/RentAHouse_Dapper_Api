@@ -1,6 +1,12 @@
+using RentAHouse_Dapper_Api.Models.DapperContext;
+using RentAHouse_Dapper_Api.Repositories.Abstract;
+using RentAHouse_Dapper_Api.Repositories.Concrete.MsSql;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddTransient<Context>();
+builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

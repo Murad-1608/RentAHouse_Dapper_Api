@@ -13,6 +13,20 @@ namespace RentAHouse_Dapper_Api.Repositories.Concrete.MsSql
             this.context = context;
         }
 
+        public async Task CreateCategory(CreateCategoryDTO categoryDTO)
+        {
+            string query = "insert into categories values(@categoryName,@categoryStatus)";
+            var parameters = new DynamicParameters();
+            parameters.Add("categoryName", categoryDTO.Name);
+            parameters.Add("categoryStatus", true);
+
+            using (var connection = context.CreateConnection())
+            {
+                await connection.ExecuteAsync(query, parameters);
+            }
+
+        }
+
         public async Task<List<ResultCategoryDTO>> GetAllAsync()
         {
             string query = "select *from categories";

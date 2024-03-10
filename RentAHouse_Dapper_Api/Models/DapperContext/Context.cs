@@ -11,7 +11,7 @@ namespace RentAHouse_Dapper_Api.Models.DapperContext
         public Context(IConfiguration configuration)
         {
             this.configuration = configuration;
-            this.connectionString = configuration.GetConnectionString("connection");
+            connectionString = configuration.GetConnectionString("connection");
         }
 
         public IDbConnection CreateConnection() => new SqlConnection(connectionString);
