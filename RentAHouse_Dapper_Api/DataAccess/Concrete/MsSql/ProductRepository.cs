@@ -25,7 +25,7 @@ namespace RentAHouse_Dapper_Api.DataAccess.Concrete.MsSql
 
         public async Task<List<ResultProductWithCategoryDTO>> GetWithCategory()
         {
-            string query = "select p.Title,p.Price,p.City,p.District,c.Name as CategoryName from Products p inner join Categories c on p.CategoryId=c.Id";
+            string query = "select p.Title,p.Price,p.City,p.District,p.CoverImage,c.Name as CategoryName from Products p inner join Categories c on p.CategoryId=c.Id";
 
             using (var connection = context.CreateConnection())
             {

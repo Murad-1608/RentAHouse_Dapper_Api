@@ -1,6 +1,7 @@
-﻿namespace RentAHouse_Dapper_Api.DTOs.ProductDTOs
+﻿namespace RentAHouse_Dapper_UI.Models.ProductModels
 {
-    public class ResultProductWithCategoryDTO
+
+    public class ResultProductModel
     {
         public string Title { get; set; }
         public decimal Price { get; set; }
@@ -9,4 +10,5 @@
         public string CategoryName { get; set; }
         public string CoverImage { get; set; }
     }
+
 }
