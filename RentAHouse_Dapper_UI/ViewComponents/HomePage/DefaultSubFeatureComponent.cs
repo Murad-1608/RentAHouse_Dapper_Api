@@ -2,7 +2,7 @@
 
 namespace RentAHouse_Dapper_UI.ViewComponents.HomePage
 {
-    public class DefaultSubFeatureComponent : BaseViewComponent
+    public class DefaultSubFeatureComponent : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

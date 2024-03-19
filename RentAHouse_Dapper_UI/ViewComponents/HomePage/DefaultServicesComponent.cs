@@ -13,14 +13,6 @@ namespace RentAHouse_Dapper_UI.ViewComponents.HomePage
 
         public async override Task<IViewComponentResult> InvokeAsync()
         {
-            var client = httpClientFactory.CreateClient();
-            var response = await client.GetAsync("https://localhost:44316/api/Services/GetAll");
-            if (response.IsSuccessStatusCode)
-            {
-                var jsonData = await response.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultProductModel>>(jsonData);
-                return View(values);
-            }
             return View();
         }
     }
