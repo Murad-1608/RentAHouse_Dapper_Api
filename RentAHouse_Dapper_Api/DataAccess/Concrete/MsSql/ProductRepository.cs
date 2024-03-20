@@ -11,6 +11,11 @@ namespace RentAHouse_Dapper_Api.DataAccess.Concrete.MsSql
         {
         }
 
+        public Task Create(CreateProductDTO createProductDTO)
+        {
+            string query = "insert into Products values(categoryId=@categoryId,title=@title,)";
+        }
+
         public async Task<List<ResultProductDTO>> GetAllAsync()
         {
             string query = "select *from Products";

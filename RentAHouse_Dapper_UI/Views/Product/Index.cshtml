@@ -1,0 +1,48 @@
+﻿@model List<RentAHouse_Dapper_UI.Models.ProductModels.ResultProductModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="col-12">
+    <div class="bg-light rounded h-100 p-4">
+        <h6 class="mb-4">Evlər</h6>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">№</th>
+                        <th scope="col">Ad</th>
+                        <th scope="col">Kateqoriya</th>
+                        <th scope="col">Qiymet</th>
+                        <th scope="col">Şəhər</th>
+                        <th scope="col">Rayon</th>
+                        <th scope="col">Sil</th>
+                        <th scope="col">Yenilə</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <tr>
+                            <th scope="row">@(i+1)</th>
+                            <td>@Model[i].Title</td>
+                            <td>@Model[i].CategoryName</td>
+                            <td>@Model[i].Price</td>
+                            <td>@Model[i].City</td>
+                            <td>@Model[i].District</td>
+                            <td><a asp-controller="product" asp-action="delete" asp-route-id="@Model[i].Id" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a asp-controller="product" asp-action="update" asp-route-id="@Model[i].Id" class="btn btn-outline-success">Yenilə</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            <a href="/product/create" class="btn btn-outline-info">Yeni elan yarat</a>
+        </div>
+    </div>
+</div>
+
+
+
+

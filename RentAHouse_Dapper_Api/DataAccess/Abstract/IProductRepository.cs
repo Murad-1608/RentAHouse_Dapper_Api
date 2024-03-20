@@ -6,5 +6,6 @@ namespace RentAHouse_Dapper_Api.DataAccess.Abstract
     {
         Task<List<ResultProductDTO>> GetAllAsync();
         Task<List<ResultProductWithCategoryDTO>> GetWithCategory();
+        Task Create(CreateProductDTO createProductDTO);
     }
 }

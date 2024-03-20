@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RentAHouse_Dapper_Api.DataAccess.Abstract;
+using RentAHouse_Dapper_Api.DTOs.ProductDTOs;
 
 namespace RentAHouse_Dapper_Api.Controllers
 {
@@ -28,6 +29,12 @@ namespace RentAHouse_Dapper_Api.Controllers
             var values = await productRepository.GetWithCategory();
 
             return Ok(values);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(CreateProductDTO createProductDTO)
+        {
+
         }
     }
 }
