@@ -4,39 +4,37 @@
     Layout = "~/Views/Admin/Index.cshtml";
 }
 
-<div class="container-fluid pt-4 px-4">
-    <div class="row g-4">
-        <div class="col-12">
-            <div class="bg-light rounded h-100 p-4">
-                <h6 class="mb-4">Kateqoriyalar</h6>
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">№</th>
-                                <th scope="col">Ad</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Sil</th>
-                                <th scope="col">Yenilə</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for (int i = 0; i < Model.Count; i++)
-                            {
-                                <tr>
-                                    <th scope="row">@(i+1)</th>
-                                    <td>@Model[i].Name</td>
-                                    <td>@Model[i].Status</td>
-                                    <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
-                                    <td><a href="#" class="btn btn-outline-success">Yenilə</a></td>
-                                </tr>
-                            }
+<div class="col-12">
+    <div class="bg-light rounded h-100 p-4">
+        <h6 class="mb-4">Kateqoriyalar</h6>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">№</th>
+                        <th scope="col">Ad</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Sil</th>
+                        <th scope="col">Yenilə</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <tr>
+                            <th scope="row">@(i+1)</th>
+                            <td>@Model[i].Name</td>
+                            <td>@Model[i].Status</td>
+                            <td><a asp-controller="category" asp-action="delete" asp-route-id="@Model[i].Id" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a asp-controller="category" asp-action="update" asp-route-id="@Model[i].Id" class="btn btn-outline-success">Yenilə</a></td>
+                        </tr>
+                    }
 
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                </tbody>
+            </table>
+            <a href="/category/create" class="btn btn-outline-info">Yeni kateqoriya yarat</a>
         </div>
     </div>
 </div>
+
 

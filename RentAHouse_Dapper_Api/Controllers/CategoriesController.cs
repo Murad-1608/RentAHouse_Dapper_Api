@@ -31,7 +31,7 @@ namespace RentAHouse_Dapper_Api.Controllers
             return Ok(new { StatusCode = 200 });
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             await categoryRepository.Delete(id);

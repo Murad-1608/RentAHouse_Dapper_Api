@@ -22,7 +22,12 @@
             @await Component.InvokeAsync("AdminLayoutNavbarComponent")
             <!-- Navbar End -->
             <!-- Blank Start -->
-            @RenderBody()
+
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    @RenderBody()
+                </div>
+            </div>
             <!-- Blank End -->
             <!-- Footer Start -->
             <partial name="~/PartialViews/AdminLayout/FooterPartial.cshtml" />
